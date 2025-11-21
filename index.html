@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahid Hussain - Resume</title>
+    <style>
+        /* WHY: Reset default browser styles for consistency */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* WHY: Clean, professional font and layout */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            padding: 40px 20px;
+        }
+
+        /* WHY: Max-width keeps content readable, centered layout is professional */
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            /* WHY: Subtle shadow adds depth and professionalism */
+        }
+
+        /* WHY: Large, bold name creates strong visual hierarchy */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #000;
+            /* WHY: Bold black line separates header from content */
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            /* WHY: Uppercase and letter-spacing create professional impact */
+        }
+
+        /* WHY: Contact info displayed horizontally for space efficiency */
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #555;
+            margin-top: 15px;
+        }
+
+        .contact-info a {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s;
+            /* WHY: Smooth color transition on hover */
+        }
+
+        .contact-info a:hover {
+            color: #666;
+        }
+
+        /* WHY: Consistent spacing between major sections */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        /* WHY: Bold, uppercase section titles create clear organization */
+        .section-title {
+            font-size: 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #000;
+            /* WHY: Underline separates sections clearly */
+        }
+
+        /* WHY: Education displayed as simple, clean text block */
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* WHY: Two-column layout for skills saves space */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 10px;
+        }
+
+        .skill-category strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .skill-category span {
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* WHY: Project cards stand out with subtle background */
+        .project {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 4px solid #000;
+            /* WHY: Left border creates visual accent */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            /* WHY: Hover effect makes resume interactive */
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .project-tech {
+            font-size: 13px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .project-links {
+            margin-top: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-right: 15px;
+            color: #000;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            border-bottom: 2px solid #000;
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+            /* WHY: Underline style for links is professional */
+        }
+
+        .project-link:hover {
+            opacity: 0.7;
+        }
+
+        .project ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .project li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* WHY: Other projects displayed as simple list */
+        .other-projects {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .other-projects a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            padding: 8px 15px;
+            border: 2px solid #000;
+            transition: all 0.3s;
+            /* WHY: Button-style links are clickable and clear */
+        }
+
+        .other-projects a:hover {
+            background: #000;
+            color: #fff;
+            /* WHY: Inverted colors on hover create impact */
+        }
+
+        /* WHY: Certification displayed with clear date */
+        .certification {
+            margin-bottom: 15px;
+        }
+
+        .certification h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .certification p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .cert-date {
+            float: right;
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* WHY: Responsive design for mobile devices */
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 30px 20px;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+        }
+
+        /* WHY: Print styles for clean PDF export */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .resume-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+
+            .project:hover {
+                transform: none;
+                box-shadow: none;
+            }
+
+            a {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>ZAHID HUSSAIN</h1>
+            <div class="contact-info">
+                <a href="mailto:zahidhussaindev1@gmail.com">zahidhussaindev1@gmail.com</a>
+                <span>|</span>
+                <a href="tel:03403107703">03403107703</a>
+                <span>|</span>
+                <span>Sindh, Hyderabad</span>
+                <span>|</span>
+                <a href="https://github.com/zahidhussain998" target="_blank">Github.com</a>
+            </div>
+        </header>
+
+        <!-- Education Section -->
+        <section class="section">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="education-item">
+                <h3>GCUH</h3>
+                <p>Majors: Computer Science</p>
+            </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <strong>Languages:</strong>
+                    <span>HTML, JavaScript, TypeScript</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Technologies:</strong>
+                    <span>React JS, Next JS, React Native, Tailwind CSS, Websocket, Appwrite, Git, Node.js, MongoDB, Express.js</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section">
+            <h2 class="section-title">Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">Task Management System</h3>
+                    <span class="project-tech">Next.js, DND, Redux</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Link</a>
+                </div>
+                <ul>
+                    <li>Developed a task management system with smooth drag-and-drop functionality, delivering an intuitive and responsive user experience.</li>
+                    <li>Implemented advanced state management and integrated Redux to streamline task creation, updates, and movement.</li>
+                    <li>Enhanced usability through user testing and optimized the interface for seamless performance across all devices.</li>
+                </ul>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">Automated Booking System</h3>
+                    <span class="project-tech">Supabase, Redux-Thunk, Resend, Stripe, Google Calendar</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Repo Link</a>
+                </div>
+                <ul>
+                    <li>Built a smart scheduling platform for professionals (barbers, consultants, etc.) featuring real-time availability, dynamic pricing, and instant booking updates using Supabase.</li>
+                    <li>Integrated Stripe for secure payments, Google Calendar sync, and automated client reminders via Resend.</li>
+                    <li>Designed a modern, fully responsive UI with Tailwind CSS.</li>
+                </ul>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">Pomodoro Timer</h3>
+                    <span class="project-tech">Next.js, MongoDB, Stripe, React-Calendar</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Link</a>
+                </div>
+                <ul>
+                    <li>Designed a productivity-focused Pomodoro Timer app that structures work into high-focus intervals and reduces burnout.</li>
+                    <li>Integrated session tracking, customizable timers, and calendar scheduling for better planning and daily productivity insights.</li>
+                    <li>Implemented MongoDB for session storage, Stripe for premium features, and React-Calendar for intuitive scheduling.</li>
+                    <li>Delivered a clean, responsive interface in Next.js, ensuring fast performance and a smooth cross-device user experience.</li>
+                </ul>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">Tesla Clone</h3>
+                    <span class="project-tech">React.js, Redux, Styled-Components, React-Reveal</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link">Live Link</a>
+                </div>
+                <ul>
+                    <li>Developed a clone of Tesla's website, improving user engagement by 40% through a polished, interactive user interface with smooth animations.</li>
+                    <li>Employed Redux for state management, ensuring consistent data flow across the application.</li>
+                    <li>Integrated styled-components for a scalable and maintainable CSS architecture.</li>
+                    <li>Enhanced user experience with React Reveal animations, adding dynamic visual elements that mimic Tesla's brand aesthetics.</li>
+                </ul>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project">
+                <div class="project-header">
+                    <h3 class="project-title">Animated Landing Page</h3>
+                    <span class="project-tech">React.js, Clerk Auth, Tailwind CSS, Framer Motion</span>
+                </div>
+                <ul>
+                    <li>Designed an animated landing page with secure authentication, boosting user interaction and retention by 30% with a visually engaging and responsive interface.</li>
+                    <li>Utilized Framer Motion for fluid, engaging animations that enhance the user experience.</li>
+                    <li>Integrated Clerk authentication for secure, streamlined user login and registration.</li>
+                </ul>
+            </div>
+
+            <!-- Other Projects -->
+            <div>
+                <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 15px;">Other Projects</h3>
+                <div class="other-projects">
+                    <a href="#" target="_blank">Portfolio</a>
+                    <a href="#" target="_blank">Calling App</a>
+                    <a href="#" target="_blank">Currency Converter</a>
+                    <a href="#" target="_blank">More Projects...</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certification">
+                <h3>
+                    JavaScript Algorithms And Data Structures Developer Certification
+                    <span class="cert-date">2025</span>
+                </h3>
+                <p>freeCodeCamp</p>
+                <a href="#" class="project-link" style="margin-top: 5px; display: inline-block;">Certification Link</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
